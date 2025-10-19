@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Lời chúc 20/10</title>
+<style>
+  body {
+    background-color: pink;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Comic Sans MS', cursive;
+  }
+
+  h1 {
+    font-size: 40px;
+    text-shadow: 2px 2px 5px red;
+    animation: moveText 8s linear infinite;
+  }
+
+  @keyframes moveText {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: float 5s infinite ease-in;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+  <h1>💖 Chúc mừng ngày Phụ nữ Việt Nam 20/10 💖</h1>
+  <p>Bạn là người phụ nữ tuyệt vời nhất! Chúc bạn luôn hạnh phúc và rạng rỡ 🌸</p>
+
+  <script>
+    // tạo trái tim bay
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
